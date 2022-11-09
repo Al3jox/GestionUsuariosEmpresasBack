@@ -1,12 +1,12 @@
 const EmpresasCtr = {};
 const empresasModel = require('../models/empresas-models');
-const empresa = require('../models/empresas-models');
+// const empresa = require('../models/empresas-models');
 
 //Crear Empresa
 //======================================================
 EmpresasCtr.crea = async(req, res) => {
     const {nombre, nit, direccion, correo, telefono, imagen} = req.body
-    const nuevaEmpresa = new empresa({
+    const nuevaEmpresa = new empresasModel({
         nombre, 
         nit, 
         direccion, 
@@ -26,12 +26,12 @@ EmpresasCtr.crea = async(req, res) => {
 //Actualizar Empresa
 //======================================================
 EmpresasCtr.actualizarEmpresa = async(req, res) => {
-    const id = req.params.id;
-    await empresasModel.findByIdAndUpdate({_id:id}, req.body);
-    const respuesta = await empresasModel.findById({_id:id});
+    const id = req.params.id
+    await empresasModel.findByIdAndUpdate({_id:id}, req.body)
+    const respuesta = await empresasModel.findById({_id:id})
     res.json({
-        mensaje: "La empresa fue actualisada",
-        respuesta,
+        mensaje: "La empresa fue actualizada",
+        respuesta
     })
 }
 //======================================================
