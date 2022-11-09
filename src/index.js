@@ -23,7 +23,8 @@ app.use(cors({origen: "*"}));
 
 //Rutas
 // ======================================================
-
+app.use('/usuarios', require('./routes/usuarios-routes'));
+app.use('/empresas', require('./routes/empresas-router'));
 // ======================================================
 
 // Escucha del puerto

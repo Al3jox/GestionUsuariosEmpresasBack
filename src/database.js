@@ -6,7 +6,7 @@ const moongose = require('mongoose');
 
 //BD Local 
 // ======================================================
-URL = ('mongodb://localhost:27017/prueba');
+URL = ('mongodb://localhost:27017/gestionUsuEmpre');
 // ======================================================
 
 // Conexión
