@@ -8,6 +8,7 @@ const usuariosSchema = new Schema ({
     numDocumento: {type : Number},
     direccion: {type: String},
     correo: {type: String},
+    contrasena: {type: String},
     telefono: {type:Number},
     imagen: {type:String}
 })
