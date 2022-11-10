@@ -1,5 +1,5 @@
 const auth = {}
-const { json } = require('body-parser');
+// const { json } = require('body-parser');
 const jwt = require('jsonwebtoken');
 
 
@@ -21,13 +21,11 @@ auth.verificarToken = (req, res, next) => {
 
     jwt.verify(token, 'SecurePassword', (error, resultado) => {
         if(error){
-            return res,json({
+            return res.json({
                 mensaje: 'Se ha perdido la conexión y tu sesión ha finalizado. Por favor vuelve a iniciar sesión'
             })
-
-            next();
-
         }
+        next();
     })
 }
 //===============================================
